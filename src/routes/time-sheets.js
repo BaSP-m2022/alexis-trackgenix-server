@@ -6,13 +6,9 @@ const router = express.Router();
 
 router
   .get('/', timeSheetsController.getAllTimesheets)
-  .get('/date', timeSheetsController.getBetweenDatesTimesheets)
-  .get('/role/:role', timeSheetsController.getByRoleTimesheets)
   .get('/project/:projectId', timeSheetsController.getByProjecTimesheets)
-  .get('/employee/:employeeId', timeSheetsController.getByEmployeeTimesheets)
-  .get('/pm/:projectManagerId', timeSheetsController.getByPMTimesheets)
-  .get('/task/:taskId', timeSheetsController.getByTaskTimesheets)
-  .get('/validated/:validated', timeSheetsController.getByValidatedTimesheets)
+  // .get('/task/:taskId', timeSheetsController.getByTaskTimesheets)
+  .get('/approved/:approved', timeSheetsController.getByApprovedTimesheets)
   .get('/:id', timeSheetsController.getByIdTimesheets)
   .put('/:id', timeSheetsValidator.updateValidation, timeSheetsController.updateTimeSheet)
   .post('/', timeSheetsValidator.createTimeValidation, timeSheetsController.createTimesheet)
