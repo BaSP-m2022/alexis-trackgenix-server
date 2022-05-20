@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import app from './app';
 
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 mongoose.connect(
   'mongodb+srv://BaSD:BaSD2021@cluster0.5vk6q.mongodb.net/backend-template-basp?retryWrites=true&w=majority',
