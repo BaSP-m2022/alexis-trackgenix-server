@@ -151,7 +151,7 @@ const getByProjecTimesheets = async (req, res) => {
 const createTimesheet = async (req, res) => {
   try {
     const timesheet = new models.TimeSheet({
-      taskList: [],
+      taskList: [{}],
       projectId: req.body.projectId,
       approved: req.body.approved,
     });

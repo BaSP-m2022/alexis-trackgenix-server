@@ -4,7 +4,7 @@ import Joi from 'joi';
 const createTimeValidation = (req, res, next) => {
   const timesheetValidation = Joi.object({
     taskList: Joi.array().required(),
-    projectId: Joi.string().alphanum().length(24),
+    projectId: Joi.object(),
     approved: Joi.boolean().required(),
   });
 
@@ -22,7 +22,7 @@ const createTimeValidation = (req, res, next) => {
 const updateValidation = (req, res, next) => {
   const timeSheetSchema = Joi.object({
     taskList: Joi.array(),
-    projectId: Joi.string().alphanum().length(24),
+    projectId: Joi.object(),
     approved: Joi.boolean(),
   });
   const validation = timeSheetSchema.validate(req.body);

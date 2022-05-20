@@ -1,2 +1,0 @@
-PORT=3000
-URL_MONGO='mongodb+srv://pucheRR:BaSP2022@cluster0.3uv6a.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';

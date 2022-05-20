@@ -3,8 +3,18 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 const timeSheetSchema = new Schema(
   {
-    taskList: { type: Array, default: [], required: true },
-    projectId: { type: String, required: true },
+    taskList: [{
+      taskId: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'Task',
+      },
+    }],
+    projectId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'Project',
+    },
     approved: { type: Boolean, required: true },
   },
   { timestamps: true },
